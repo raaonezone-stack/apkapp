@@ -1,6 +1,7 @@
 name: Build APK
 
-on: [push]
+on:
+  push:
 
 jobs:
   build:
@@ -9,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Build APK
+    - name: Build with Buildozer
       uses: ArtemSBulgakov/buildozer-action@v1
       with:
-        command: buildozer android debug
+        buildozer_version: stable
